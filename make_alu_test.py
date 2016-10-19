@@ -52,6 +52,8 @@ for t in range(cycles):
                 val = int(user_input[2:], 2)
             else:
                 val = int(user_input)
+                if val < 0:
+                    val = 2**32 + val
             s = format(val, '08x')
             f_X.write(s+"\n")
             success = 1
@@ -68,6 +70,8 @@ for t in range(cycles):
                 val = int(user_input[2:], 2)
             else:
                 val = int(user_input)
+                if val < 0:
+                    val = 2**32 + val
             s = format(val, '08x')
             f_Y.write(s+"\n")
             success = 1
@@ -125,6 +129,8 @@ for t in range(cycles):
                 val = int(user_input[2:], 2)
             else:
                 val = int(user_input)
+                if val < 0:
+                    val = 2**32 + val
             s = format(val, '032b')
             s = " ".join(s[i:i+4] for i in range(0, len(s), 4))
             f_out.write(s+"\t")
@@ -143,6 +149,8 @@ for t in range(cycles):
                     val = int(user_input[2:], 2)
                 else:
                     val = int(user_input)
+                    if val < 0:
+                        val = 2**32 + val
                 s = format(val, '032b')
                 s = " ".join(s[i:i+4] for i in range(0, len(s), 4))
                 f_out.write(s+"\n")
